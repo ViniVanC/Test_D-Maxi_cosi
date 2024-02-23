@@ -40,6 +40,14 @@
   margin-bottom: 51px;
 }
 
+@media (max-height: 800px) {
+  .felicidades__img {
+    width: 228px;
+    height: 240px;
+    margin-bottom: 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .felicidades__img {
     width: 228px;
