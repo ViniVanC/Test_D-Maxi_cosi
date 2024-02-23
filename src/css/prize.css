@@ -1,0 +1,106 @@
+.prize__grid {
+  display: grid;
+  grid-template-rows: repeat(3, 180px);
+  grid-template-columns: repeat(4, 170px);
+  justify-content: center;
+  row-gap: 150px;
+  column-gap: 170px;
+}
+
+.prize__box {
+  position: relative;
+  cursor: pointer;
+}
+
+.prize__box.open img:nth-child(1) {
+  top: -30px;
+}
+
+.prize__box img {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  object-fit: contain;
+}
+
+.prize__box img:nth-child(1) {
+  z-index: 3;
+  top: 0;
+}
+.prize__box img:nth-child(2) {
+  z-index: 1;
+  top: 10%;
+}
+.prize__box img:nth-child(3) {
+  z-index: 2;
+  top: 21%;
+}
+
+.ohhh {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  gap: 130px;
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(3, 3, 3, 0.6);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.ohhh.active {
+  visibility: visible;
+  opacity: 1;
+  overflow-y: hidden;
+}
+
+@media (max-width: 1440px) {
+  .prize__grid {
+    row-gap: 100px;
+    column-gap: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .prize__grid {
+    grid-template-rows: repeat(3, 140px);
+    grid-template-columns: repeat(4, 130px);
+    row-gap: 100px;
+    column-gap: 50px;
+  }
+}
+
+@media (max-width: 425px) {
+  .prize__grid {
+    margin-top: 48px;
+    grid-template-rows: repeat(4, 90px);
+    grid-template-columns: repeat(3, 80px);
+    justify-content: center;
+    row-gap: 28px;
+    column-gap: 46px;
+  }
+
+  .prize__box.open img:nth-child(1) {
+    top: -15px;
+  }
+
+  .ohhh {
+    gap: 65px;
+    padding: 15px;
+  }
+
+  .ohhh .content__title {
+    font-size: 26px;
+  }
+  .ohhh__description {
+    font-size: 12px;
+    text-align: center;
+  }
+}
